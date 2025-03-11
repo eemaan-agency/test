@@ -2,6 +2,8 @@ const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
 
+app.use(cors());
+
 app.get('/get-instagram-followers', async (req, res) => {
   const username = req.query.username;
   const response = await fetch(`https://www.instagram.com/${username}/`);
